@@ -4,6 +4,7 @@ import { EditorContent } from '@tiptap/react'
 import { useInitEditor } from './hooks'
 import ButtonList from './button-list'
 import Image from 'next/image'
+import './index.css'
 
 const Tiptap = () => {
   const editor = useInitEditor()
@@ -41,7 +42,7 @@ const Tiptap = () => {
       </div>
       <div className="mx-auto w-[756px]">
         <div className="mb-[28px] pt-[52px]">
-          <div className="mb-[20px] text-[32px] font-[600] text-[rgba(2,19,36,0.9)]">文章标题/Article Title</div>
+          <div className="mb-[20px] text-[32px] font-[600] text-[rgba(2,19,36,0.9)]">文章标题 / Article Title</div>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <div className="flex items-center rounded-[100px] bg-[rgba(2,19,36,0.05)] py-[6px] pl-[6px] pr-[12px]">

@@ -8,7 +8,8 @@ export const useInitEditor = () => {
     // content: '<p data-placeholder="Write something, or press space for AI, /  for commands…"></p>',
     editorProps: {
       attributes: {
-        class: 'prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl focus:outline-none'
+        class:
+          'prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl px-[2px] py-[3px] focus:outline-none'
       }
     }
   })

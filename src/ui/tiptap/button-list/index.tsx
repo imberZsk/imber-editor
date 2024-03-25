@@ -6,11 +6,45 @@ const ButtonList: React.FC<ButtonListProps> = ({ editor }) => {
     <div className="flex gap-[12px]">
       {/* <Image src={'/editor/tt.webp'} width={24} height={24} alt=""></Image> */}
       {/* <Image src={'/editor/turn.webp'} width={24} height={24} alt=""></Image> */}
-      <Image src={'/editor/b.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
-      <Image src={'/editor/s.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
-      <Image src={'/editor/u.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
-      <Image src={'/editor/a.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
-      {/* <Image src={'/editor/turn.webp'} width={24} height={24} alt=""></Image>
+
+      {/* 加粗 */}
+      <button
+        onClick={() => editor.chain().focus().toggleBold().run()}
+        disabled={!editor.can().chain().focus().toggleBold().run()}
+        className={editor.isActive('bold') ? 'is-active' : ''}
+      >
+        <Image src={'/editor/b.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
+      </button>
+
+      {/* 斜体 */}
+      <button
+        onClick={() => editor.chain().focus().toggleItalic().run()}
+        disabled={!editor.can().chain().focus().toggleItalic().run()}
+        className={editor.isActive('italic') ? 'is-active' : ''}
+      >
+        <Image src={'/editor/i.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
+      </button>
+
+      {/* 删除线 */}
+      <button
+        onClick={() => editor.chain().focus().toggleStrike().run()}
+        disabled={!editor.can().chain().focus().toggleStrike().run()}
+        className={editor.isActive('strike') ? 'is-active' : ''}
+      >
+        <Image src={'/editor/s.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
+      </button>
+
+      {/* 下划线 */}
+      <button
+        onClick={() => editor.chain().focus().toggleUnderline().run()}
+        disabled={!editor.can().chain().focus().toggleUnderline().run()}
+        className={editor.isActive('underline') ? 'is-active' : ''}
+      >
+        <Image src={'/editor/u.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
+      </button>
+
+      {/* <Image src={'/editor/a.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
+      <Image src={'/editor/turn.webp'} width={24} height={24} alt=""></Image>
       <Image src={'/editor/left.webp'} width={24} height={24} alt=""></Image>
       <Image src={'/editor/center.webp'} width={24} height={24} alt=""></Image>
       <Image src={'/editor/right.webp'} width={24} height={24} alt=""></Image>

@@ -1,5 +1,5 @@
 {
-  "name": "ding",
+  "name": "editor",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,11 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@tiptap/core": "^2.2.4",
+    "@tiptap/extension-placeholder": "^2.2.4",
+    "@tiptap/pm": "^2.2.4",
+    "@tiptap/react": "^2.2.4",
+    "@tiptap/starter-kit": "^2.2.4",
     "next": "14.1.1",
     "prettier-plugin-tailwindcss": "^0.5.12",
     "react": "^18",

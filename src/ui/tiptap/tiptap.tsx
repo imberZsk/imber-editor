@@ -5,10 +5,19 @@ import { useInitEditor } from './hooks'
 import ButtonList from './button-list'
 import Image from 'next/image'
 import './index.css'
+import { InputProps, transformFields } from '@/utils/editor-transform'
+// import { create } from '@/lib/api-myplus'
 
 const Tiptap = () => {
   const editor = useInitEditor()
   if (!editor) return
+
+  const submit = () => {
+    const target = JSON.stringify(transformFields(editor.getJSON().content as InputProps[]))
+    console.log(target, 'target')
+    // create({ target })
+  }
+
   return (
     <div>
       <div className="flex h-[64px] items-center justify-between border-b border-[rgba(2,20,37,0.1)] px-[32px]">
@@ -33,7 +42,10 @@ const Tiptap = () => {
           <button className="mr-[12px] h-[34px] w-[72px] rounded-[8px] border border-[rgba(1,19,36,0.12)] text-[15px] font-medium text-[#8E8C99]">
             存草稿
           </button>
-          <button className="h-[34px] w-[72px] rounded-[8px] bg-[#ff4132] text-[15px] font-medium text-[#ffffff]">
+          <button
+            className="h-[34px] w-[72px] rounded-[8px] bg-[#ff4132] text-[15px] font-medium text-[#ffffff]"
+            onClick={submit}
+          >
             发布
           </button>
           <div className="mx-[16px] h-[18px] w-[1px] bg-[rgba(1,19,36,0.12)]"></div>
@@ -56,7 +68,7 @@ const Tiptap = () => {
               </div>
             </div>
             <div className="flex items-center gap-[12px] text-[15px] text-[rgba(2,19,36,0.35)]">
-              <div>2024-1-10</div>
+              <div>{new Date().toLocaleString()}</div>
               <div>广东</div>
               <div>0浏览</div>
             </div>

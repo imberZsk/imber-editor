@@ -2,6 +2,7 @@ import StarterKit from '@tiptap/starter-kit'
 import Card from './extension-card/src'
 import Placeholder from '@tiptap/extension-placeholder'
 import TiptapUnderline from '@tiptap/extension-underline'
+import Image from '@tiptap/extension-image'
 
 export const extensionsConfig = [
   StarterKit.configure({
@@ -30,6 +31,7 @@ export const extensionsConfig = [
     }
   }),
   TiptapUnderline,
+  Image,
   Card.configure({
     HTMLAttributes: {
       class: 'w-[708px] h-[40px] border border-[#ff4132]'

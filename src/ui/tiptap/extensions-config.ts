@@ -26,7 +26,7 @@ export const extensionsConfig = [
     },
     paragraph: {
       HTMLAttributes: {
-        class: 'py-[3px] px-[2px]'
+        // class: 'py-[3px] px-[2px]'
       }
     }
   }),

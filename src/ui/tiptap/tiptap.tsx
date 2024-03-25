@@ -6,16 +6,17 @@ import ButtonList from './button-list'
 import Image from 'next/image'
 import './index.css'
 import { InputProps, transformFields } from '@/utils/editor-transform'
-// import { create } from '@/lib/api-myplus'
+import { create } from '@/lib/api-myplus'
 
 const Tiptap = () => {
   const editor = useInitEditor()
   if (!editor) return
 
   const submit = () => {
+    console.log(editor.getJSON().content, '???')
     const target = JSON.stringify(transformFields(editor.getJSON().content as InputProps[]))
     console.log(target, 'target')
-    // create({ target })
+    create({ target })
   }
 
   return (

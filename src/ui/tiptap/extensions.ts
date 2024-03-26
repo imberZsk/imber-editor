@@ -4,7 +4,7 @@ import Placeholder from '@tiptap/extension-placeholder'
 import TiptapUnderline from '@tiptap/extension-underline'
 import Image from '@tiptap/extension-image'
 
-export const extensionsConfig = [
+export const extensions = [
   StarterKit.configure({
     blockquote: {
       HTMLAttributes: {
@@ -26,7 +26,7 @@ export const extensionsConfig = [
     },
     paragraph: {
       HTMLAttributes: {
-        // class: 'py-[3px] px-[2px]'
+        class: 'py-[3px] px-[2px]'
       }
     }
   }),

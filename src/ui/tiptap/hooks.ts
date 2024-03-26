@@ -1,10 +1,10 @@
 import { useEditor } from '@tiptap/react'
-import { extensionsConfig } from './extensions-config'
+import { extensions } from './extensions'
 
 export const useInitEditor = () => {
   const editor = useEditor({
     editable: true,
-    extensions: [...extensionsConfig],
+    extensions: [...extensions],
     // content: '<p data-placeholder="Write something, or press space for AI, /  for commands…"></p>',
     editorProps: {
       attributes: {

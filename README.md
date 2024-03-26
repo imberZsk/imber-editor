@@ -4,4 +4,4 @@
 
 ## 项目亮点
 
-- dynamic 处理ali-oss
+- dynamic 处理ali-oss，减小包体积

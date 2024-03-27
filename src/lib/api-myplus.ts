@@ -1,4 +1,6 @@
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+import { fetchEventSource } from '@microsoft/fetch-event-source'
+import CryptoJS from 'crypto-js'
 
 // 发布文章
 export const create = async ({ target }: { target: string }) => {
@@ -68,4 +70,21 @@ export const uploadOss = async ({ accessKeyId, accessKeySecret, stsToken, path, 
   const url = `https://ssm.res.meizu.com/${ossRes.name}`
 
   return url
+}
+
+// AI - 根据关键词生成朋友圈文案
+export const getAiGcDocumentFriend = async () => {
+  const url = `/api-myplus/myplus-qing/ug/ai/gc/document/friend?text=${encodeURIComponent('魅族')}`
+  let tar = ''
+  await fetchEventSource(url, {
+    method: 'POST',
+    onmessage(ev) {
+      const encodedData = ev.data // Base64 编码的字符串
+      // 解密 Base64 数据
+      const decodedData = CryptoJS.enc.Base64.parse(encodedData).toString(CryptoJS.enc.Utf8)
+      // setStr(str => (str += decodedData))
+      tar += decodedData
+    }
+  })
+  return tar
 }

@@ -4,7 +4,7 @@ import LazyUpload from './lazy-upload'
 import { ButtonListProps } from './type'
 import Image from 'next/image'
 
-const ButtonList: React.FC<ButtonListProps> = ({ editor }) => {
+const TiptapButtons: React.FC<ButtonListProps> = ({ editor }) => {
   return (
     <div className="flex gap-[12px]">
       {/* <Image src={'/editor/tt.webp'} width={24} height={24} alt=""></Image> */}
@@ -86,4 +86,4 @@ const ButtonList: React.FC<ButtonListProps> = ({ editor }) => {
   )
 }
 
-export default ButtonList
+export default TiptapButtons

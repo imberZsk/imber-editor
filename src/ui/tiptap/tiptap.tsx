@@ -2,20 +2,22 @@
 
 import { EditorContent } from '@tiptap/react'
 import { useInitEditor } from './hooks'
-import ButtonList from './button-list'
+import ButtonList from './tiptap-buttons'
 import Image from 'next/image'
 import './index.css'
 import { InputProps, transformFields } from '@/utils/editor-transform'
 import { create } from '@/lib/api-myplus'
+import TiptapBubble from './tiptap-bubble'
+import { useState } from 'react'
 
 const Tiptap = () => {
   const editor = useInitEditor()
+  const [openAI, setOpenAI] = useState(false)
+
   if (!editor) return
 
   const submit = () => {
-    console.log(editor.getJSON().content, '???')
     const target = JSON.stringify(transformFields(editor.getJSON().content as InputProps[]))
-    console.log(target, 'target')
     create({ target })
   }
 
@@ -76,6 +78,8 @@ const Tiptap = () => {
           </div>
         </div>
         <EditorContent editor={editor} />
+
+        <TiptapBubble editor={editor} open={openAI} onOpenChange={setOpenAI}></TiptapBubble>
       </div>
     </div>
   )

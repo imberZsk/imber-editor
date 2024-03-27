@@ -3,6 +3,8 @@ import Card from './extension-card/src'
 import Placeholder from '@tiptap/extension-placeholder'
 import TiptapUnderline from '@tiptap/extension-underline'
 import Image from '@tiptap/extension-image'
+import BubbleMenu from '@tiptap/extension-bubble-menu'
+import Ai from './extension-ai/src'
 
 export const extensions = [
   StarterKit.configure({
@@ -32,6 +34,8 @@ export const extensions = [
   }),
   TiptapUnderline,
   Image,
+  BubbleMenu.configure({}),
+  Ai,
   Card.configure({
     HTMLAttributes: {
       class: 'w-[708px] h-[40px] border border-[#ff4132]'

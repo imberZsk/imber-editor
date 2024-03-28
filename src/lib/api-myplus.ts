@@ -73,8 +73,8 @@ export const uploadOss = async ({ accessKeyId, accessKeySecret, stsToken, path, 
 }
 
 // AI - 根据关键词生成朋友圈文案
-export const getAiGcDocumentFriend = async () => {
-  const url = `/api-myplus/myplus-qing/ug/ai/gc/document/friend?text=${encodeURIComponent('魅族')}`
+export const getAiGcDocumentFriend = async (selection: string) => {
+  const url = `/api-myplus/myplus-qing/ug/ai/gc/document/friend?text=${encodeURIComponent(selection)}`
   let tar = ''
   await fetchEventSource(url, {
     method: 'POST',

@@ -3,13 +3,13 @@ import { Editor } from '@tiptap/react'
 import { useRef, useState } from 'react'
 import Typed from 'typed.js'
 
-const AISelector = ({ editor }: { editor: Editor }) => {
+const AISelector = ({ editor, selection }: { editor: Editor; selection: string }) => {
   const el1 = useRef(null)
   const typed = useRef<Typed | null>(null)
   const [aiData, setAiData] = useState('')
 
   const handleAI1 = async () => {
-    const tar = await getAiGcDocumentFriend()
+    const tar = await getAiGcDocumentFriend(selection)
     if (typed.current) {
       typed.current?.destroy()
     }

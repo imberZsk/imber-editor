@@ -5,6 +5,7 @@ import TiptapUnderline from '@tiptap/extension-underline'
 import Image from '@tiptap/extension-image'
 import BubbleMenu from '@tiptap/extension-bubble-menu'
 import Ai from './extension-ai/src'
+import { Markdown } from 'tiptap-markdown'
 
 export const extensions = [
   StarterKit.configure({
@@ -31,6 +32,10 @@ export const extensions = [
         class: 'py-[3px] px-[2px]'
       }
     }
+  }),
+  Markdown.configure({
+    html: false,
+    transformCopiedText: true
   }),
   TiptapUnderline,
   Image,

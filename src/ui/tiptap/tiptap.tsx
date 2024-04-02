@@ -9,6 +9,7 @@ import { InputProps, transformFields } from '@/utils/editor-transform'
 import { create } from '@/lib/api-myplus'
 import TiptapBubble from './tiptap-bubble'
 import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 
 const Tiptap = () => {
   const editor = useInitEditor()
@@ -74,6 +75,7 @@ const Tiptap = () => {
               <div>{new Date().toLocaleString()}</div>
               <div>广东</div>
               <div>0浏览</div>
+              <Button variant="outline">Button</Button>
             </div>
           </div>
         </div>

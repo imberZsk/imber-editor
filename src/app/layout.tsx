@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 // import { AntdRegistry } from '@ant-design/nextjs-registry'
 
 export const metadata: Metadata = {
@@ -13,10 +14,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        {/* <AntdRegistry>{children}</AntdRegistry> */}
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          {/* <AntdRegistry>{children}</AntdRegistry> */}
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

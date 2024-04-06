@@ -7,10 +7,12 @@ export default function Home() {
       <div className="absolute left-[50%] mt-[30vh] translate-x-[-50%] translate-y-[-50%]">
         <div>要登陆了你才能进到dashboard</div>
         <br />
-        <div>
-          <br />
+        <div className="flex justify-between">
           <Link href="/login">
-            <Button>login in</Button>
+            <Button>登陆</Button>
+          </Link>
+          <Link href="/signUp">
+            <Button>注册</Button>
           </Link>
         </div>
       </div>

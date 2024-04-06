@@ -36,11 +36,11 @@ export default function LoginForm() {
             <Button type="submit" className="w-full">
               Create an account
             </Button>
-            <Link href={'/dashboard'}>
+            {/* <Link href={'/dashboard'}>
               <Button variant="outline" className="w-full">
                 Sign up with GitHub
               </Button>
-            </Link>
+            </Link> */}
           </div>
           <div className="mt-4 text-center text-sm">
             Already have an account?{' '}

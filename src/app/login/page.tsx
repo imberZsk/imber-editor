@@ -21,19 +21,6 @@ function LoginWithGitHub() {
   )
 }
 
-// function SignOut() {
-//   return (
-//     <form
-//       action={async () => {
-//         'use server'
-//         await signOut()
-//       }}
-//     >
-//       <button>Sign Out</button>
-//     </form>
-//   )
-// }
-
 export default function LoginForm() {
   return (
     <Card className="mx-auto mt-[20vh] max-w-sm">

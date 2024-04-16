@@ -52,9 +52,6 @@ const TiptapBubble = ({ editor, open, onOpenChange }: TiptapBubbleProps) => {
             Ask AI
           </button>
           <NormalBubble editor={editor} setOpen={onOpenChange}></NormalBubble>
-          <NormalBubble editor={editor} setOpen={onOpenChange}></NormalBubble>
-          <NormalBubble editor={editor} setOpen={onOpenChange}></NormalBubble>
-          <NormalBubble editor={editor} setOpen={onOpenChange}></NormalBubble>
         </Fragment>
       )}
     </BubbleMenu>

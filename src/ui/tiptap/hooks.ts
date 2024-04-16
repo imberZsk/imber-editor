@@ -12,7 +12,8 @@ export const useInitEditor = () => {
     editorProps: {
       attributes: {
         class:
-          'prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl px-[2px] py-[3px] focus:outline-none'
+          // 'prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl px-[2px] py-[3px] focus:outline-none'
+          'prose dark:prose-invert'
       }
     }
   })

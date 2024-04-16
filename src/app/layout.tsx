@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import '../styles/globals.css'
+import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 // import { AntdRegistry } from '@ant-design/nextjs-registry'
 
@@ -15,8 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="dark">
+      <body className="bg-background text-foreground">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {/* <AntdRegistry>{children}</AntdRegistry> */}
           {children}
         </ThemeProvider>

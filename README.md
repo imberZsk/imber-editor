@@ -10,3 +10,7 @@
 - 气泡栏朝下 [https://atomiks.github.io/tippyjs/v6/all-props/](tippyjs)
 - tiptap-markdown第三方插件有待考虑
 - 基于 nextAuth 的 Oauth Github 登陆方案
+
+## callbackURL
+
+<!-- [origin]/api/auth/callback/[provider] -->

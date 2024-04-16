@@ -7,6 +7,8 @@ import BubbleMenu from '@tiptap/extension-bubble-menu'
 import Ai from './extension-ai/src'
 import { Markdown } from 'tiptap-markdown'
 
+import Slash from './extension-slash-commands/src'
+
 export const extensions = [
   StarterKit.configure({
     blockquote: {
@@ -48,5 +50,6 @@ export const extensions = [
   }),
   Placeholder.configure({
     placeholder: 'Write something …'
-  })
+  }),
+  Slash
 ]

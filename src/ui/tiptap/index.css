@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 
-.ProseMirror h1 {
+/* .ProseMirror h1 {
   margin-top: 24px;
   mix-blend-mode: 6px;
   font-size: 25px;
@@ -32,4 +32,4 @@
   color: rgba(2, 19, 36, 0.9);
   font-weight: bold;
   padding: 3px 2px;
-}
+} */

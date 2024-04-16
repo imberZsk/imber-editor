@@ -2,11 +2,11 @@
 // const LazyUpload = dynamic(() => import('./lazy-upload'), { loading: () => <p>Loading...</p> })
 import LazyUpload from './lazy-upload'
 import { ButtonListProps } from './type'
-import Image from 'next/image'
+import { Bold, Italic, Underline, Strikethrough } from 'lucide-react'
 
 const TiptapButtons: React.FC<ButtonListProps> = ({ editor }) => {
   return (
-    <div className="flex gap-[12px]">
+    <div className="flex gap-[12px] text-background">
       {/* <Image src={'/editor/tt.webp'} width={24} height={24} alt=""></Image> */}
       {/* <Image src={'/editor/turn.webp'} width={24} height={24} alt=""></Image> */}
 
@@ -16,7 +16,7 @@ const TiptapButtons: React.FC<ButtonListProps> = ({ editor }) => {
         disabled={!editor.can().chain().focus().toggleBold().run()}
         className={editor.isActive('bold') ? 'is-active' : ''}
       >
-        <Image src={'/editor/b.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
+        <Bold size={24} className="cursor-pointer"></Bold>
       </button>
 
       {/* 斜体 */}
@@ -25,7 +25,7 @@ const TiptapButtons: React.FC<ButtonListProps> = ({ editor }) => {
         disabled={!editor.can().chain().focus().toggleItalic().run()}
         className={editor.isActive('italic') ? 'is-active' : ''}
       >
-        <Image src={'/editor/i.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
+        <Italic size={24} className="cursor-pointer"></Italic>
       </button>
 
       {/* 删除线 */}
@@ -34,7 +34,7 @@ const TiptapButtons: React.FC<ButtonListProps> = ({ editor }) => {
         disabled={!editor.can().chain().focus().toggleStrike().run()}
         className={editor.isActive('strike') ? 'is-active' : ''}
       >
-        <Image src={'/editor/s.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
+        <Strikethrough size={24} className="cursor-pointer"></Strikethrough>
       </button>
 
       {/* 下划线，老社区没有下滑线 */}
@@ -43,7 +43,7 @@ const TiptapButtons: React.FC<ButtonListProps> = ({ editor }) => {
         disabled={!editor.can().chain().focus().toggleUnderline().run()}
         className={editor.isActive('underline') ? 'is-active' : ''}
       >
-        <Image src={'/editor/u.webp'} width={24} height={24} alt="" className="cursor-pointer"></Image>
+        <Underline size={24} className="cursor-pointer"></Underline>
       </button>
 
       {/* 图片上传 */}

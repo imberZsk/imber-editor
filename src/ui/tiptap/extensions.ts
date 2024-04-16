@@ -5,6 +5,11 @@ import TiptapUnderline from '@tiptap/extension-underline'
 import Image from '@tiptap/extension-image'
 import BubbleMenu from '@tiptap/extension-bubble-menu'
 import Ai from './extension-ai/src'
+import TaskList from '@tiptap/extension-task-list'
+import TaskItem from '@tiptap/extension-task-item'
+import TextAlign from '@tiptap/extension-text-align'
+import Subscript from '@tiptap/extension-subscript'
+import Superscript from '@tiptap/extension-superscript'
 import { Markdown } from 'tiptap-markdown'
 
 import Slash from './extension-slash-commands/src'
@@ -22,7 +27,7 @@ export const extensions = [
       }
     },
     heading: {
-      levels: [1, 2, 3]
+      levels: [1, 2, 3, 4]
     },
     horizontalRule: {
       HTMLAttributes: {
@@ -31,7 +36,7 @@ export const extensions = [
     },
     paragraph: {
       HTMLAttributes: {
-        class: 'py-[3px] px-[2px]'
+        // class: 'py-[3px] px-[2px]'
       }
     }
   }),
@@ -51,5 +56,14 @@ export const extensions = [
   Placeholder.configure({
     placeholder: 'Write something …'
   }),
-  Slash
+  Slash,
+  TaskList,
+  TaskItem.configure({
+    // nested: true
+  }),
+  TextAlign.configure({
+    types: ['heading', 'paragraph']
+  }),
+  Subscript,
+  Superscript
 ]

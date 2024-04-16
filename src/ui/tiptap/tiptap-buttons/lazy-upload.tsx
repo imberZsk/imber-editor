@@ -1,11 +1,11 @@
-import Image from 'next/image'
 import { uploadImage } from './utils'
 import { Editor } from '@tiptap/react'
+import { Image as LucideImage } from 'lucide-react'
 
 const LazyUpload = ({ editor }: { editor: Editor }) => {
   return (
     <button onClick={() => uploadImage(editor)}>
-      <Image src={'/editor/image.svg'} width={20} height={20} alt="" className="cursor-pointer"></Image>
+      <LucideImage size={20} className="cursor-pointer"></LucideImage>
     </button>
   )
 }

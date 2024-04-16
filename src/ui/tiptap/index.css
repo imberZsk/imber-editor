@@ -33,3 +33,27 @@
   font-weight: bold;
   padding: 3px 2px;
 } */
+
+.tiptap ul[data-type='taskList'] {
+  @apply list-none p-0;
+
+  p {
+    @apply m-0;
+  }
+
+  li {
+    @apply flex;
+
+    > label {
+      @apply mr-2 mt-0 flex-auto shrink-0 grow-0 select-none;
+    }
+
+    > div {
+      @apply mb-0 flex-auto;
+    }
+
+    &[data-checked='true'] {
+      @apply line-through;
+    }
+  }
+}

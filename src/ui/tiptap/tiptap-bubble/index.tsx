@@ -33,7 +33,7 @@ const TiptapBubble = ({ editor, open, onOpenChange }: TiptapBubbleProps) => {
   return (
     <BubbleMenu
       {...bubbleMenuProps}
-      className="w-max-[1000px] flex rounded-[4px] bg-[#ffffff] shadow-[rgba(15,15,15,0.05)_0px_0px_0px_1px,rgba(15,15,15,0.1)_0px_3px_6px,rgba(15,15,15,0.2)_0px_9px_24px]"
+      className="w-max-[1000px] inline-flex rounded-[4px] bg-foreground text-background shadow-[rgba(15,15,15,0.05)_0px_0px_0px_1px,rgba(15,15,15,0.1)_0px_3px_6px,rgba(15,15,15,0.2)_0px_9px_24px]"
     >
       {open && <AISelector editor={editor} selection={selection}></AISelector>}
 

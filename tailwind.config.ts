@@ -66,6 +66,39 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            'h2, h3, h4, h5, ul, ol': {
+              'margin-top': '1em',
+              'margin-bottom': '0.6em'
+            },
+            'p, pre, blockquote': {
+              'margin-top': '0.6em',
+              'margin-bottom': '0.6em'
+            },
+            pre: {
+              background: 'var(--pre)'
+            },
+            li: {
+              'margin-top': '0px',
+              'margin-bottom': '0px'
+            },
+            'li > p, li > ul, li > ol ': {
+              'margin-top': '0px',
+              'margin-bottom': '0px'
+            },
+            hr: {
+              'margin-top': '1em',
+              'margin-bottom': '1em'
+            },
+            img: {
+              'margin-top': '0.6em',
+              'margin-bottom': '0.6em'
+            }
+          }
+        }
       }
     }
   },

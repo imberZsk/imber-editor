@@ -88,6 +88,7 @@ const Tiptap = () => {
               </div>
             </div>
           </div>
+
           <EditorContent editor={editor} />
 
           <TiptapBubble editor={editor} open={openAI} onOpenChange={setOpenAI}></TiptapBubble>

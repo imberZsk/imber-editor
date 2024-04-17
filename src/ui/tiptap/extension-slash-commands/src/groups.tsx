@@ -9,8 +9,8 @@ import {
   Quote,
   SquareCode,
   Minus,
-  Columns2,
-  Image
+  Columns2
+  // Image
 } from 'lucide-react'
 import { Group } from './types'
 
@@ -69,16 +69,16 @@ export const GROUPS: Group[] = [
           editor.chain().focus().toggleOrderedList().run()
         }
       },
-      // {
-      //   name: 'taskList',
-      //   label: 'TaskList 任务列表',
-      //   Icon: ListTodo,
-      //   description: 'Task list with todo items',
-      //   aliases: ['todo'],
-      //   action: (editor: Editor) => {
-      //     editor.chain().focus().toggleTaskList().run()
-      //   }
-      // },
+      {
+        name: 'taskList',
+        label: 'TaskList 任务列表',
+        Icon: ListTodo,
+        description: 'Task list with todo items',
+        aliases: ['todo'],
+        action: (editor: Editor) => {
+          editor.chain().focus().toggleTaskList().run()
+        }
+      },
       {
         name: 'blockquote',
         label: 'Blockquote 引用',
@@ -99,58 +99,58 @@ export const GROUPS: Group[] = [
         }
       }
     ]
+  },
+  {
+    name: 'insert',
+    title: '插入',
+    commands: [
+      // TODO: table
+
+      // {
+      //   name: 'image',
+      //   label: 'Image 图片',
+      //   Icon: Image,
+      //   description: 'Insert an image',
+      //   aliases: ['img'],
+      //   action: (editor) => {
+      //     const defaultUrl = 'https://source.unsplash.com/8xznAGy4HcY/600x300'
+      //     const url = window.prompt('Image URL')
+
+      //     editor
+      //       .chain()
+      //       .focus()
+      //       .setImageBlock({
+      //         src: url || defaultUrl
+      //       })
+      //       .run()
+      //   }
+      // },
+      {
+        name: 'columns',
+        label: 'Columns 多列',
+        Icon: Columns2,
+        description: 'Add two column content',
+        aliases: ['cols'],
+        shouldBeHidden: (editor) => editor.isActive('columns'),
+        action: (editor) => {
+          editor
+            .chain()
+            .focus()
+            .setColumns()
+            .focus(editor.state.selection.head - 1)
+            .run()
+        }
+      },
+      {
+        name: 'horizontalRule',
+        label: 'HR 分割线',
+        Icon: Minus,
+        description: 'Insert a horizontal divider',
+        aliases: ['hr'],
+        action: (editor: Editor) => {
+          editor.chain().focus().setHorizontalRule().run()
+        }
+      }
+    ]
   }
-  // {
-  //   name: 'insert',
-  //   title: '插入',
-  //   commands: [
-  //     // TODO: table
-
-  //     {
-  //       name: 'image',
-  //       label: 'Image 图片',
-  //       Icon: Image,
-  //       description: 'Insert an image',
-  //       aliases: ['img'],
-  //       action: (editor) => {
-  //         const defaultUrl = 'https://source.unsplash.com/8xznAGy4HcY/600x300'
-  //         const url = window.prompt('Image URL')
-
-  //         editor
-  //           .chain()
-  //           .focus()
-  //           .setImageBlock({
-  //             src: url || defaultUrl,
-  //           })
-  //           .run()
-  //       },
-  //     },
-  //     {
-  //       name: 'columns',
-  //       label: 'Columns 多列',
-  //       Icon: Columns2,
-  //       description: 'Add two column content',
-  //       aliases: ['cols'],
-  //       shouldBeHidden: (editor) => editor.isActive('columns'),
-  //       action: (editor) => {
-  //         editor
-  //           .chain()
-  //           .focus()
-  //           .setColumns()
-  //           .focus(editor.state.selection.head - 1)
-  //           .run()
-  //       },
-  //     },
-  //     {
-  //       name: 'horizontalRule',
-  //       label: 'HR 分割线',
-  //       Icon: Minus,
-  //       description: 'Insert a horizontal divider',
-  //       aliases: ['hr'],
-  //       action: (editor: Editor) => {
-  //         editor.chain().focus().setHorizontalRule().run()
-  //       },
-  //     },
-  //   ],
-  // },
 ]

@@ -62,7 +62,6 @@ export const Card = Extension.create({
 
         // 判断在什么情况下可以触发 suggestion
         allow: (tr) => {
-          console.log(tr.range, 'tr')
           const { state, range } = tr
           // { state, range }
           const $from = state.doc.resolve(range.from)

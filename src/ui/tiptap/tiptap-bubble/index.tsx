@@ -2,6 +2,9 @@ import { Editor, BubbleMenu } from '@tiptap/react'
 import NormalBubble from './normal-bubble'
 import AISelector from './ai-selector'
 import { Fragment, useRef, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { isTextSelected } from '@/components/editor/utils/isTextSelected'
+import ContentTypeMenu from './content-type'
 
 interface TiptapBubbleProps {
   editor: Editor
@@ -14,6 +17,14 @@ const TiptapBubble = ({ editor, open, onOpenChange }: TiptapBubbleProps) => {
   const instanceRef = useRef<any>(null)
 
   const [selection, setSelection] = useState('')
+
+  function shouldShow(editor: Editor) {
+    // 某些类型，不显示文本菜单
+    if (editor?.isActive('codeBlock')) return false
+
+    // 其他，看是否选中了文本
+    return isTextSelected({ editor })
+  }
 
   const bubbleMenuProps = {
     editor: editor,
@@ -31,29 +42,35 @@ const TiptapBubble = ({ editor, open, onOpenChange }: TiptapBubbleProps) => {
   }
 
   return (
-    <BubbleMenu
-      {...bubbleMenuProps}
-      className="w-max-[1000px] inline-flex rounded-[4px] bg-foreground text-background shadow-[rgba(15,15,15,0.05)_0px_0px_0px_1px,rgba(15,15,15,0.1)_0px_3px_6px,rgba(15,15,15,0.2)_0px_9px_24px]"
-    >
+    <BubbleMenu {...bubbleMenuProps} className="inline-flex" shouldShow={() => shouldShow(editor)}>
       {open && <AISelector editor={editor} selection={selection}></AISelector>}
 
-      {!open && (
-        <Fragment>
-          <button
-            onClick={() => {
-              onOpenChange(true)
-              const slice = editor.state.selection.content()
-              const text = editor.storage.markdown.serializer.serialize(slice.content)
-              setSelection(text)
-              instanceRef.current.setProps({ placement: 'bottom-start' })
-            }}
-            className={`${editor.isActive('bold') ? 'is-active' : ''} border-r border-[#cccccc] px-[10px]`}
-          >
-            Ask AI
-          </button>
-          <NormalBubble editor={editor} setOpen={onOpenChange}></NormalBubble>
-        </Fragment>
-      )}
+      <div
+        className="dark:bg-background-dark inline-flex space-x-1 rounded
+    border bg-background p-1 shadow 
+    dark:border-gray-800 dark:shadow-lg"
+      >
+        {!open && (
+          <Fragment>
+            <ContentTypeMenu editor={editor} />
+            <Button
+              onClick={() => {
+                onOpenChange(true)
+                const slice = editor.state.selection.content()
+                const text = editor.storage.markdown.serializer.serialize(slice.content)
+                setSelection(text)
+                instanceRef.current.setProps({ placement: 'bottom-start' })
+              }}
+              className={`${editor.isActive('bold') ? 'is-active' : ''}`}
+              variant="ghost"
+              size="sm"
+            >
+              Ask AI
+            </Button>
+            <NormalBubble editor={editor} setOpen={onOpenChange} bubble={instanceRef.current}></NormalBubble>
+          </Fragment>
+        )}
+      </div>
     </BubbleMenu>
   )
 }

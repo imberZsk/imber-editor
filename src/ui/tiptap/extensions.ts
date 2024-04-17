@@ -1,3 +1,4 @@
+// import { Markdown } from 'tiptap-markdown'
 import StarterKit from '@tiptap/starter-kit'
 import Card from './extension-card/src'
 import Placeholder from '@tiptap/extension-placeholder'
@@ -10,40 +11,26 @@ import TaskItem from '@tiptap/extension-task-item'
 import TextAlign from '@tiptap/extension-text-align'
 import Subscript from '@tiptap/extension-subscript'
 import Superscript from '@tiptap/extension-superscript'
-import { Markdown } from 'tiptap-markdown'
-
+import Highlight from '@tiptap/extension-highlight'
 import Slash from './extension-slash-commands/src'
+import { Column, Columns } from './extension-column'
+import Document from './extension-document'
+import Link from '@tiptap/extension-link'
 
 export const extensions = [
+  Column,
+  Columns,
+  Document,
   StarterKit.configure({
-    blockquote: {
-      HTMLAttributes: {
-        class: 'border-l-4 border-stone-700'
-      }
-    },
-    bold: {
-      HTMLAttributes: {
-        class: 'font-bold'
-      }
-    },
+    document: false,
     heading: {
       levels: [1, 2, 3, 4]
-    },
-    horizontalRule: {
-      HTMLAttributes: {
-        class: 'my-[20px]'
-      }
-    },
-    paragraph: {
-      HTMLAttributes: {
-        // class: 'py-[3px] px-[2px]'
-      }
     }
   }),
-  Markdown.configure({
-    html: false,
-    transformCopiedText: true
-  }),
+  // Markdown.configure({
+  //   html: false,
+  //   transformCopiedText: true
+  // }),
   TiptapUnderline,
   Image,
   BubbleMenu.configure({}),
@@ -65,5 +52,12 @@ export const extensions = [
     types: ['heading', 'paragraph']
   }),
   Subscript,
-  Superscript
+  Superscript,
+  Highlight.configure({
+    multicolor: true
+  }),
+  Link.configure({
+    openOnClick: false
+    // autolink: true
+  })
 ]

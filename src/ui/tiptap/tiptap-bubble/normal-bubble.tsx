@@ -1,26 +1,45 @@
 import { Editor } from '@tiptap/react'
+// import HighLight from './highLight'
+import Popover from './popover'
+import { Button } from '@/components/ui/button'
 
-const NormalBubble = ({ editor, setOpen }: { editor: Editor; setOpen: (open: boolean) => void }) => {
+const NormalBubble = ({
+  editor,
+  setOpen,
+  bubble
+}: {
+  editor: Editor
+  setOpen: (open: boolean) => void
+  bubble: any
+}) => {
   return (
     <>
-      <button
+      <Button
+        size="sm"
+        variant="ghost"
         onClick={() => editor.chain().focus().toggleBold().run()}
-        className={`${editor.isActive('bold') ? 'is-active' : ''} border-r border-[#cccccc] px-[10px]`}
+        className={`${editor.isActive('bold') ? 'is-active' : ''}`}
       >
         bold
-      </button>
-      <button
+      </Button>
+      <Button
+        variant="ghost"
+        size="sm"
         onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={`editor.isActive('italic') ? 'is-active' : '' border-r border-[#cccccc] px-[10px]`}
+        className={`editor.isActive('italic') ? 'is-active' : ''`}
       >
         italic
-      </button>
-      <button
+      </Button>
+      <Button
+        size="sm"
+        variant="ghost"
         onClick={() => editor.chain().focus().toggleStrike().run()}
-        className={`${editor.isActive('strike') ? 'is-active' : ''} px-[10px]`}
+        className={`${editor.isActive('strike') ? 'is-active' : ''}`}
       >
         strike
-      </button>
+      </Button>
+      {/* <HighLight bubble={bubble} /> */}
+      <Popover editor={editor}></Popover>
     </>
   )
 }

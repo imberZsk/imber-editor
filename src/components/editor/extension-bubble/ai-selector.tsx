@@ -2,6 +2,8 @@ import { getAiGcDocumentFriend, getAiGcPolish } from '@/lib/api-myplus'
 import { Editor } from '@tiptap/react'
 import { useRef, useState } from 'react'
 import Typed from 'typed.js'
+import '@/styles/loading.css'
+import { Button } from '@/components/ui/button'
 
 const AISelector = ({ editor, selection }: { editor: Editor; selection: string }) => {
   const el1 = useRef(null)
@@ -47,7 +49,7 @@ const AISelector = ({ editor, selection }: { editor: Editor; selection: string }
   }
 
   return (
-    <div className="p-[10px]">
+    <div className="bg-card-background border border-border p-[10px]">
       <div className="mb-[6px] border-b border-[#cccccc] pb-[6px]">
         <button onClick={handleAiGcDocumentFriend} className={`border-r border-[#cccccc] px-[10px]`}>
           AI - 根据关键词生成朋友圈文案
@@ -71,15 +73,18 @@ const AISelector = ({ editor, selection }: { editor: Editor; selection: string }
         </div>
       )}
       <div className="mt-[10px] pt-[10px]">
-        <button
-          className="h-[34px] rounded-[8px] bg-[#ff4132] px-[10px] text-[15px] font-medium text-[#ffffff]"
-          onClick={() => {
-            if (typedStatus) return
-            editor.commands.insertContent(aiData)
-          }}
-        >
-          {typedStatus ? '文案生成中...' : '插入到编辑器'}
-        </button>
+        {!typedStatus && (
+          <Button
+            variant={'default'}
+            className="h-[34px] rounded-[8px] px-[10px] text-[15px] font-medium"
+            onClick={() => {
+              if (typedStatus) return
+              editor.commands.insertContent(aiData)
+            }}
+          >
+            插入到编辑器
+          </Button>
+        )}
       </div>
     </div>
   )

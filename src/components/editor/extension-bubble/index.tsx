@@ -53,10 +53,11 @@ const TiptapBubble = ({ editor, open, onOpenChange }: TiptapBubbleProps) => {
           <Button
             onClick={() => {
               onOpenChange(true)
-              // const slice = editor.state.selection.content()
-              // const text = editor.storage.markdown.serializer.serialize(slice.content)
-              // setSelection(text)
-              // instanceRef.current.setProps({ placement: 'bottom-start' })
+              const state = editor.state
+              const { selection } = state
+              const text = state.doc.textBetween(selection.from, selection.to, '')
+              setSelection(text)
+              instanceRef.current.setProps({ placement: 'bottom-start' })
             }}
             variant="ghost"
             size="sm"

@@ -1,10 +1,13 @@
 import { Editor, BubbleMenu } from '@tiptap/react'
-import NormalBubble from './normal-bubble'
+import BaseMenu from './base-menu'
 import AISelector from './ai-selector'
-import { Fragment, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { isTextSelected } from '@/components/editor/utils/isTextSelected'
 import ContentTypeMenu from './content-type'
+import SetLinkMenu from './menus/text-menu/set-link-menu'
+import Wrapper from './bubble-menu-wrapper'
+import Popover from './popover'
 
 interface TiptapBubbleProps {
   editor: Editor
@@ -37,7 +40,7 @@ const TiptapBubble = ({ editor, open, onOpenChange }: TiptapBubbleProps) => {
       onCreate: (val: any) => {
         instanceRef.current = val
       },
-      moveTransition: 'transform 0.15s ease-out'
+      moveTransition: 'transform 0.2s ease-out'
     }
   }
 
@@ -45,32 +48,31 @@ const TiptapBubble = ({ editor, open, onOpenChange }: TiptapBubbleProps) => {
     <BubbleMenu {...bubbleMenuProps} className="inline-flex" shouldShow={() => shouldShow(editor)}>
       {open && <AISelector editor={editor} selection={selection}></AISelector>}
 
-      <div
-        className="dark:bg-background-dark inline-flex space-x-1 rounded
-    border bg-background p-1 shadow 
-    dark:border-gray-800 dark:shadow-lg"
-      >
-        {!open && (
-          <Fragment>
-            <ContentTypeMenu editor={editor} />
-            <Button
-              onClick={() => {
-                onOpenChange(true)
-                const slice = editor.state.selection.content()
-                const text = editor.storage.markdown.serializer.serialize(slice.content)
-                setSelection(text)
-                instanceRef.current.setProps({ placement: 'bottom-start' })
-              }}
-              className={`${editor.isActive('bold') ? 'is-active' : ''}`}
-              variant="ghost"
-              size="sm"
-            >
-              Ask AI
-            </Button>
-            <NormalBubble editor={editor} setOpen={onOpenChange} bubble={instanceRef.current}></NormalBubble>
-          </Fragment>
-        )}
-      </div>
+      {!open && (
+        <Wrapper>
+          <Button
+            onClick={() => {
+              onOpenChange(true)
+              // const slice = editor.state.selection.content()
+              // const text = editor.storage.markdown.serializer.serialize(slice.content)
+              // setSelection(text)
+              // instanceRef.current.setProps({ placement: 'bottom-start' })
+            }}
+            variant="ghost"
+            size="sm"
+          >
+            Ask AI
+          </Button>
+
+          <ContentTypeMenu editor={editor} />
+
+          <SetLinkMenu editor={editor} />
+
+          <BaseMenu editor={editor} setOpen={onOpenChange} bubble={instanceRef.current}></BaseMenu>
+
+          <Popover editor={editor}></Popover>
+        </Wrapper>
+      )}
     </BubbleMenu>
   )
 }

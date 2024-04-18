@@ -33,12 +33,12 @@
   --ring: 240 10% 3.9%;
 
   --radius: 0.5rem;
+
   --pre: rgb(0 0 0);
+  --placeholder: rgba(55, 53, 47, 0.5);
 }
 
 .dark {
-  --pre: rgb(23 23 23);
-
   --background: 240 10% 3.9%;
   --foreground: 0 0% 98%;
 
@@ -63,9 +63,12 @@
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 240 3.7% 50.9%;
+  --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
   --ring: 240 4.9% 83.9%;
+
+  --pre: rgb(23 23 23);
+  --placeholder: rgba(255, 255, 255, 0.282);
 }
 /* } */
 

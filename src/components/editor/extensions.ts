@@ -1,6 +1,5 @@
 // import { Markdown } from 'tiptap-markdown'
 import StarterKit from '@tiptap/starter-kit'
-import Card from './extension-card/src'
 import Placeholder from '@tiptap/extension-placeholder'
 import TiptapUnderline from '@tiptap/extension-underline'
 import Image from '@tiptap/extension-image'
@@ -35,13 +34,8 @@ export const extensions = [
   Image,
   BubbleMenu.configure({}),
   Ai,
-  Card.configure({
-    HTMLAttributes: {
-      class: 'w-[708px] h-[40px] border border-[#ff4132]'
-    }
-  }),
   Placeholder.configure({
-    placeholder: 'Write something …'
+    placeholder: `Write something, ' / ' for commands…`
   }),
   Slash,
   TaskList,
@@ -57,7 +51,7 @@ export const extensions = [
     multicolor: true
   }),
   Link.configure({
-    openOnClick: false
-    // autolink: true
+    openOnClick: false,
+    autolink: true
   })
 ]

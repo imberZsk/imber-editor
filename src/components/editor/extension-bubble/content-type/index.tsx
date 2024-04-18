@@ -1,10 +1,6 @@
 import { Editor } from '@tiptap/react'
 import { Button } from '@/components/ui/button'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { ChevronsUpDown } from 'lucide-react'
 import { useContentType } from './useContentType'
 
@@ -20,7 +16,7 @@ export default function ContentTypeMenu(props: IProps) {
 
   function getLabel() {
     const item = options.find((op) => op.isActive())
-    return item?.label ?? '段落'
+    return item?.label ?? '文本'
   }
 
   return (

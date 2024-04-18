@@ -2,31 +2,34 @@
 
 import { EditorContent } from '@tiptap/react'
 import { useInitEditor } from './hooks'
-import ButtonList from './tiptap-buttons'
-import Image from 'next/image'
+// import ButtonList from './tiptap-buttons'
+// import Image from 'next/image'
 import './index.css'
-import { InputProps, transformFields } from '@/utils/editor-transform'
-import { create } from '@/lib/api-myplus'
-import TiptapBubble from './tiptap-bubble'
-import { useState } from 'react'
+// import { InputProps, transformFields } from '@/utils/editor-transform'
+// import { create } from '@/lib/api-myplus'
+import TiptapBubble from './extension-bubble'
+import { useRef, useState } from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import LinkMenu from './extension-bubble/menus/link-menu'
 
 const Tiptap = () => {
   const editor = useInitEditor()
   const [openAI, setOpenAI] = useState(false)
 
-  const [state, setState] = useState('文章标题 / Article Title')
+  const [state, setState] = useState('')
+
+  const menuContainerRef = useRef(null)
 
   if (!editor) return
 
-  const submit = () => {
-    const target = JSON.stringify(transformFields(editor.getJSON().content as InputProps[]))
-    create({ target })
-  }
+  // const submit = () => {
+  //   const target = JSON.stringify(transformFields(editor.getJSON().content as InputProps[]))
+  //   create({ target })
+  // }
 
   return (
-    <div>
-      <div className="flex h-[64px] items-center justify-between border-b border-[rgba(2,20,37,0.1)] px-[32px]">
+    <>
+      {/* <div className="flex h-[64px] items-center justify-between border-b border-[rgba(2,20,37,0.1)] px-[32px]">
         <div className="flex items-center font-medium">
           <div className="mr-[28px] h-[24px] w-[24px] dark:invert">
             <Image src={'/editor/2.webp'} width={24} height={24} alt="" className=""></Image>
@@ -57,19 +60,21 @@ const Tiptap = () => {
           <div className="mx-[16px] h-[18px] w-[1px] bg-[rgba(1,19,36,0.12)]"></div>
           <div className="h-[32px] w-[32px] rounded-[50%] bg-[#cccccc]"></div>
         </div>
-      </div>
+      </div> */}
 
       <ScrollArea id="work-content-scroll-container" className="flex-auto">
         <div className="mx-auto w-[756px]">
-          <div className="mb-[28px] pt-[52px]">
+          <div className="pt-[52px]">
             <input
+              maxLength={60}
+              placeholder="无标题"
               className="mb-[20px] w-full bg-background text-[32px] font-[600] outline-none"
               value={state}
               onChange={(e) => {
                 setState(e.target.value)
               }}
             />
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <div className="flex items-center rounded-[100px] bg-[rgba(2,19,36,0.05)] py-[6px] pl-[6px] pr-[12px]">
                   <div className="mr-[8px] h-[20px] w-[20px] rounded-[50%] bg-[#cccccc]"></div>
@@ -86,15 +91,19 @@ const Tiptap = () => {
                 <div>广东</div>
                 <div>0浏览</div>
               </div>
-            </div>
+            </div> */}
           </div>
 
-          <EditorContent editor={editor} />
+          <div ref={menuContainerRef}>
+            <EditorContent editor={editor} />
 
-          <TiptapBubble editor={editor} open={openAI} onOpenChange={setOpenAI}></TiptapBubble>
+            <TiptapBubble editor={editor} open={openAI} onOpenChange={setOpenAI}></TiptapBubble>
+
+            <LinkMenu editor={editor} appendTo={menuContainerRef} />
+          </div>
         </div>
       </ScrollArea>
-    </div>
+    </>
   )
 }
 

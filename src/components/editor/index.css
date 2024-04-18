@@ -1,38 +1,12 @@
 /* editor placeholder */
-.tiptap p.is-editor-empty:first-child::before {
+.tiptap p.is-empty::before {
   color: #adb5bd;
   content: attr(data-placeholder);
   float: left;
   height: 0;
   pointer-events: none;
+  color: var(--placeholder);
 }
-
-/* .ProseMirror h1 {
-  margin-top: 24px;
-  mix-blend-mode: 6px;
-  font-size: 25px;
-  color: rgba(2, 19, 36, 0.9);
-  font-weight: bold;
-  padding: 3px 2px;
-}
-
-.ProseMirror h2 {
-  margin-top: 20px;
-  mix-blend-mode: 6px;
-  font-size: 22px;
-  color: rgba(2, 19, 36, 0.9);
-  font-weight: bold;
-  padding: 3px 2px;
-}
-
-.ProseMirror h3 {
-  margin-top: 16px;
-  mix-blend-mode: 4px;
-  font-size: 18px;
-  color: rgba(2, 19, 36, 0.9);
-  font-weight: bold;
-  padding: 3px 2px;
-} */
 
 .tiptap ul[data-type='taskList'] {
   @apply list-none p-0;

@@ -1,4 +1,4 @@
-import { BubbleMenu, Editor } from '@tiptap/react'
+import { BubbleMenu } from '@tiptap/react'
 import { useCallback, useState } from 'react'
 import Wrapper from '../bubble-menu-wrapper'
 import { LinkPreviewMenu } from './preview-menu'

@@ -1,9 +1,9 @@
-name: deloy test
+name: deloy main
 
 on:
   push:
     branches:
-      - test-deploy
+      - main
 
 jobs:
   deploy:

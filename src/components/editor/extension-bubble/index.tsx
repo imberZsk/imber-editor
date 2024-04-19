@@ -33,7 +33,7 @@ const TiptapBubble = ({ editor, open, onOpenChange }: TiptapBubbleProps) => {
   const bubbleMenuProps = {
     editor: editor,
     tippyOptions: {
-      maxWidth: '756px',
+      maxWidth: '500px',
       placement: pos as 'top',
       onHidden: () => {
         instanceRef.current.setProps({ placement: 'top' })

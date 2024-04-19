@@ -1,0 +1,33 @@
+name: deloy main
+
+on:
+  push:
+    branches:
+      - test-deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build & Deploy
+        env:
+          HOSTNAME: ${{secrets.MY_IP}}
+          USER_NAME: ${{secrets.MY_USER}}
+          PRIVATE_KEY: ${{ secrets.MY_RSA }}
+
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+            cd /editor ;
+            echo '------ cd done ------' ;
+            git pull
+            echo '------ git pull done ------' ;
+            docker rm $(docker stop $(docker ps -a -q --filter ancestor=editor))
+            echo '------ docker rm done ------' ;
+            docker build -t editor .
+            echo '------ docker build done ------'
+            docker run -d -p 81:3000 editor
+            echo '------ docker run done ------' ;
+          '
+      - name: success
+        run: echo "deploy success"

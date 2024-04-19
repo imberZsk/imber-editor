@@ -12,14 +12,21 @@ import { useRef, useState } from 'react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import LinkMenu from './extension-bubble/menus/link-menu'
 import ImageBlockMenu from './extension-bubble/menus/image-block-menu'
+import { useDebouncedCallback } from 'use-debounce'
 
 const Tiptap = () => {
   const editor = useInitEditor()
   const [openAI, setOpenAI] = useState(false)
 
-  const [state, setState] = useState('')
+  const initTitle = typeof window !== 'undefined' ? localStorage.getItem('title') || '' : ''
+
+  const [state, setState] = useState(initTitle)
 
   const menuContainerRef = useRef(null)
+
+  const updateTitle = useDebouncedCallback((e) => {
+    localStorage.setItem('title', e.target.value)
+  }, 1000)
 
   if (!editor) return
 
@@ -64,7 +71,7 @@ const Tiptap = () => {
       </div> */}
 
       <ScrollArea id="work-content-scroll-container" className="flex-auto">
-        <div className="mx-auto w-[756px]">
+        <div className="mx-auto w-[756px] max-[600px]:w-full max-[600px]:px-6">
           <div className="pt-[52px]">
             <input
               maxLength={60}
@@ -73,6 +80,8 @@ const Tiptap = () => {
               value={state}
               onChange={(e) => {
                 setState(e.target.value)
+                if (typeof window === 'undefined') return
+                updateTitle(e)
               }}
             />
             {/* <div className="flex items-center justify-between">

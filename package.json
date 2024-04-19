@@ -65,6 +65,7 @@
     "tippy.js": "^6.3.7",
     "tiptap-markdown": "^0.8.10",
     "typed.js": "^2.1.0",
+    "use-debounce": "^10.0.0",
     "uuid": "^9.0.1",
     "yup": "^1.4.0",
     "zod": "^3.22.4"

@@ -71,7 +71,7 @@ const Tiptap = () => {
       </div> */}
 
       <ScrollArea id="work-content-scroll-container" className="flex-auto">
-        <div className="mx-auto w-[756px] max-[600px]:w-full max-[600px]:px-6">
+        <div className="mx-auto min-h-screen w-[756px] max-[600px]:w-full max-[600px]:px-6">
           <div className="pt-[52px]">
             <input
               maxLength={60}

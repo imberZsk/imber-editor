@@ -50,15 +50,15 @@ const AISelector = ({ editor, selection }: { editor: Editor; selection: string }
   // }
 
   return (
-    <div className="bg-card-background border border-border p-[10px]">
-      <div className="mb-[6px] border-b border-[#cccccc] pb-[6px]">
-        <button onClick={handleAiGcDocumentFriend} className={`border-r border-[#cccccc] px-[10px]`}>
-          AI - 通义千问
+    <div className="bg-card-background border border-border bg-background p-[10px]">
+      <div className="mb-[6px] flex border-b border-[#cccccc] pb-[6px]">
+        <button onClick={handleAiGcDocumentFriend} className={`flex-shrink-0 border-r border-[#cccccc] px-[10px]`}>
+          AI - 通义千问1
         </button>
         {/* <button onClick={handleAiGcPolish} className={`px-[10px]`}> */}
-        <button onClick={handleAiGcDocumentFriend} className={`px-[10px]`}>
+        <button onClick={handleAiGcDocumentFriend} className={`flex-shrink-0 px-[10px]`}>
           {/* AI - 润色 */}
-          AI - 通义千问
+          AI - 通义千问2
         </button>
       </div>
       <div className="type-wrap w-full">

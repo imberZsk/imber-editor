@@ -1,4 +1,5 @@
-import { getAiGcDocumentFriend, getAiGcPolish } from '@/lib/api-myplus'
+// import { getAiGcDocumentFriend, getAiGcPolish } from '@/lib/api-myplus'
+import { getAiGcDocumentFriend } from '@/lib/api-myplus'
 import { Editor } from '@tiptap/react'
 import { useRef, useState } from 'react'
 import Typed from 'typed.js'
@@ -30,23 +31,23 @@ const AISelector = ({ editor, selection }: { editor: Editor; selection: string }
     typed.current.start()
   }
 
-  const handleAiGcPolish = async () => {
-    serLoading(true)
-    const tar = await getAiGcPolish(selection)
-    if (typed.current) {
-      typed.current?.destroy()
-    }
-    serLoading(false)
-    typed.current = new Typed(el1.current, {
-      strings: [tar],
-      typeSpeed: 50,
-      onComplete: () => {
-        setTypedStatus(false)
-      }
-    })
-    setAiData(tar)
-    typed.current.start()
-  }
+  // const handleAiGcPolish = async () => {
+  //   serLoading(true)
+  //   const tar = await getAiGcPolish(selection)
+  //   if (typed.current) {
+  //     typed.current?.destroy()
+  //   }
+  //   serLoading(false)
+  //   typed.current = new Typed(el1.current, {
+  //     strings: [tar],
+  //     typeSpeed: 50,
+  //     onComplete: () => {
+  //       setTypedStatus(false)
+  //     }
+  //   })
+  //   setAiData(tar)
+  //   typed.current.start()
+  // }
 
   return (
     <div className="bg-card-background border border-border p-[10px]">
@@ -54,8 +55,10 @@ const AISelector = ({ editor, selection }: { editor: Editor; selection: string }
         <button onClick={handleAiGcDocumentFriend} className={`border-r border-[#cccccc] px-[10px]`}>
           AI - 通义千问
         </button>
-        <button onClick={handleAiGcPolish} className={`px-[10px]`}>
-          AI - 润色
+        {/* <button onClick={handleAiGcPolish} className={`px-[10px]`}> */}
+        <button onClick={handleAiGcDocumentFriend} className={`px-[10px]`}>
+          {/* AI - 润色 */}
+          AI - 通义千问
         </button>
       </div>
       <div className="type-wrap w-full">

@@ -52,7 +52,7 @@ const AISelector = ({ editor, selection }: { editor: Editor; selection: string }
     <div className="bg-card-background border border-border p-[10px]">
       <div className="mb-[6px] border-b border-[#cccccc] pb-[6px]">
         <button onClick={handleAiGcDocumentFriend} className={`border-r border-[#cccccc] px-[10px]`}>
-          AI - 根据关键词生成朋友圈文案
+          AI - 通义千问
         </button>
         <button onClick={handleAiGcPolish} className={`px-[10px]`}>
           AI - 润色

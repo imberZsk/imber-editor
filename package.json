@@ -24,6 +24,7 @@
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-toast": "^1.1.5",
     "@tailwindcss/typography": "^0.5.12",
     "@tiptap/core": "^2.2.4",
     "@tiptap/extension-bubble-menu": "^2.2.4",
@@ -64,6 +65,7 @@
     "tippy.js": "^6.3.7",
     "tiptap-markdown": "^0.8.10",
     "typed.js": "^2.1.0",
+    "uuid": "^9.0.1",
     "yup": "^1.4.0",
     "zod": "^3.22.4"
   },
@@ -75,6 +77,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.8",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.1",

@@ -22,8 +22,8 @@ export const ImageUpload = Node.create({
   parseHTML() {
     return [
       {
-        tag: `div[data-type="${this.name}"]`,
-      },
+        tag: `div[data-type="${this.name}"]`
+      }
     ]
   },
 
@@ -35,12 +35,14 @@ export const ImageUpload = Node.create({
     return {
       setImageUpload:
         () =>
-        ({ commands }) =>
-          commands.insertContent(`<div data-type="${this.name}"></div>`),
+        ({ commands }) => {
+          console.log('!11')
+          return commands.insertContent(`<div data-type="${this.name}"></div>`)
+        }
     }
   },
 
   addNodeView() {
     return ReactNodeViewRenderer(ImageUploadView)
-  },
+  }
 })

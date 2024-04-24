@@ -14,7 +14,7 @@ declare module '@tiptap/core' {
 }
 
 export const Ai = Node.create({
-  name: 'ai',
+  // name: 'ai',
 
   addOptions() {
     return {

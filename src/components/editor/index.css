@@ -67,3 +67,35 @@
     @apply overflow-auto px-3;
   }
 }
+
+/* image block */
+.tiptap {
+  .node-imageBlock {
+    & img {
+      @apply w-full overflow-hidden border-2 border-transparent;
+    }
+
+    &:hover img {
+      outline: 3px solid #68cef8;
+    }
+  }
+  .ProseMirror-selectednode {
+    img {
+      outline: 3px solid #68cef8;
+    }
+  }
+
+  .node-imageUpload {
+    @apply rounded border-2 border-dotted border-black border-opacity-10 p-2 dark:border-neutral-500;
+    transition: border 160ms cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+    &:hover {
+      @apply border-opacity-30;
+    }
+
+    &:has(.is-active),
+    &.has-focus {
+      @apply border-opacity-40;
+    }
+  }
+}

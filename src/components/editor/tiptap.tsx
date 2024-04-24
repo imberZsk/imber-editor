@@ -13,6 +13,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import LinkMenu from './extension-bubble/menus/link-menu'
 import ImageBlockMenu from './extension-bubble/menus/image-block-menu'
 import { useDebouncedCallback } from 'use-debounce'
+import ContentMenu from './extension-bubble/menus/content-menu'
 
 const Tiptap = () => {
   const editor = useInitEditor()
@@ -106,6 +107,8 @@ const Tiptap = () => {
 
           <div ref={menuContainerRef}>
             <EditorContent editor={editor} />
+
+            <ContentMenu editor={editor} />
 
             <TiptapBubble editor={editor} open={openAI} onOpenChange={setOpenAI}></TiptapBubble>
 

@@ -8,6 +8,8 @@ import ContentTypeMenu from './content-type'
 import SetLinkMenu from './menus/text-menu/set-link-menu'
 import Wrapper from './bubble-menu-wrapper'
 import Popover from './popover'
+import MoreMenu from './more-menu'
+import AlignMenu from './align-menu'
 
 interface TiptapBubbleProps {
   editor: Editor
@@ -74,6 +76,10 @@ const TiptapBubble = ({ editor, open, onOpenChange }: TiptapBubbleProps) => {
           <BaseMenu editor={editor} setOpen={onOpenChange} bubble={instanceRef.current}></BaseMenu>
 
           <Popover editor={editor}></Popover>
+
+          <AlignMenu editor={editor} />
+
+          <MoreMenu editor={editor} />
         </Wrapper>
       )}
     </BubbleMenu>

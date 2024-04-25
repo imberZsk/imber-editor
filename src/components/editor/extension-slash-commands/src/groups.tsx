@@ -10,7 +10,8 @@ import {
   SquareCode,
   Minus,
   Columns2,
-  Image
+  Image,
+  Table
 } from 'lucide-react'
 import { Group } from './types'
 
@@ -104,6 +105,16 @@ export const GROUPS: Group[] = [
     name: 'insert',
     title: '插入',
     commands: [
+      {
+        name: 'table',
+        label: 'Table 表格',
+        Icon: Table,
+        description: 'Insert a table',
+        shouldBeHidden: (editor) => editor.isActive('columns'),
+        action: (editor) => {
+          editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: false }).run()
+        }
+      },
       {
         name: 'image',
         label: 'Image 图片',

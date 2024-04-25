@@ -19,6 +19,7 @@ import ImageBlock from './extension-image/image-block'
 import { ImageUpload } from './extension-image/image-upload'
 import FileHandler from '@tiptap-pro/extension-file-handler'
 import { uploadImageAPI } from './utils/api'
+import { Table, TableCell, TableRow, TableHeader } from './extension-table/index'
 
 export const extensions = [
   Column,
@@ -104,5 +105,9 @@ export const extensions = [
           .run()
       })
     }
-  })
+  }),
+  Table,
+  TableCell,
+  TableRow,
+  TableHeader
 ]

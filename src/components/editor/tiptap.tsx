@@ -14,6 +14,8 @@ import LinkMenu from './extension-bubble/menus/link-menu'
 import ImageBlockMenu from './extension-bubble/menus/image-block-menu'
 import { useDebouncedCallback } from 'use-debounce'
 import ContentMenu from './extension-bubble/menus/content-menu'
+import { TableRowMenu } from './extension-bubble/menus/table-menu/table-row-menu'
+import { TableColMenu } from './extension-bubble/menus/table-menu/table-col-menu'
 
 const Tiptap = () => {
   const editor = useInitEditor()
@@ -77,7 +79,7 @@ const Tiptap = () => {
             <input
               maxLength={60}
               placeholder="无标题"
-              className="mb-[20px] w-full bg-background text-[32px] font-[600] outline-none"
+              className="mx-10 mb-[20px] w-full bg-background text-[32px] font-[600] outline-none"
               value={state}
               onChange={(e) => {
                 setState(e.target.value)
@@ -115,6 +117,10 @@ const Tiptap = () => {
             <ImageBlockMenu editor={editor} appendTo={menuContainerRef} />
 
             <LinkMenu editor={editor} appendTo={menuContainerRef} />
+
+            <TableRowMenu editor={editor} appendTo={menuContainerRef} />
+
+            <TableColMenu editor={editor} appendTo={menuContainerRef} />
           </div>
         </div>
       </ScrollArea>

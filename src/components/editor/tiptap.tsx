@@ -109,18 +109,13 @@ const Tiptap = () => {
 
           <div ref={menuContainerRef}>
             <EditorContent editor={editor} />
-
             <ContentMenu editor={editor} />
-
             <TiptapBubble editor={editor} open={openAI} onOpenChange={setOpenAI}></TiptapBubble>
-
             <ImageBlockMenu editor={editor} appendTo={menuContainerRef} />
-
             <LinkMenu editor={editor} appendTo={menuContainerRef} />
-
             <TableRowMenu editor={editor} appendTo={menuContainerRef} />
-
             <TableColMenu editor={editor} appendTo={menuContainerRef} />
+            111
           </div>
         </div>
       </ScrollArea>

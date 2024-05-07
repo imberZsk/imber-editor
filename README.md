@@ -15,7 +15,3 @@ refactor
 revert
 style
 test
-
-## 测试部署
-
-111222333444555666

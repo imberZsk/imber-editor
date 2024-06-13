@@ -8,6 +8,7 @@ export default {
       clientSecret: process.env.AUTH_GITHUB_SECRET
     })
   ],
+  secret: process.env.AUTH_SECRET,
   trustHost: true,
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {

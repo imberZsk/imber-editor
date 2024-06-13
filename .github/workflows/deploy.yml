@@ -12,7 +12,7 @@ jobs:
       - name: Build & Deploy
         env:
           HOSTNAME: ${{secrets.MY_IP}}
-          USER_NAME: root
+          USER_NAME: ${{secrets.MY_USER}}
           PRIVATE_KEY: ${{ secrets.MY_RSA }}
 
         run: |

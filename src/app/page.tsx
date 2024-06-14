@@ -1,8 +1,7 @@
-// import TipTap from '@/components/editor'
+import TipTap from '@/components/editor'
 
 const Page: React.FC = () => {
-  // return <TipTap />
-  return <>null</>
+  return <TipTap />
 }
 
 export default Page

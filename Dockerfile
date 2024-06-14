@@ -11,7 +11,7 @@ RUN npm install -g pnpm
 COPY package.json pnpm-lock.yaml ./
 
 # 使用pnpm安装依赖
-RUN pnpm install
+RUN npm install
 
 # 复制所有文件到工作目录
 COPY . .

@@ -9,7 +9,7 @@ function SignIn() {
       }}
     >
       <p>You are not logged in </p>
-      <div>{process.env.AUTH_GITHUB_ID}</div>
+      <div>{process.env.AUTH_GITHUB_ID}</div>去掉空格
       <button type="submit">Sign in with GitHub</button>
     </form>
   )

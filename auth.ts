@@ -7,8 +7,15 @@ import type { NextAuthConfig } from 'next-auth'
 
 const config = {
   theme: { logo: 'https://authjs.dev/img/logo-sm.png' },
-  providers: [GitHub],
+  providers: [
+    GitHub({
+      clientId: process.env.AUTH_GITHUB_ID,
+      clientSecret: process.env.AUTH_GITHUB_SECRET
+    })
+  ],
+  secret: process.env.AUTH_SECRET,
   basePath: '/auth',
+  trustHost: true,
   callbacks: {
     authorized({ request, auth }) {
       const { pathname } = request.nextUrl

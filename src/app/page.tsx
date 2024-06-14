@@ -8,7 +8,7 @@ function SignIn() {
         await signIn('github')
       }}
     >
-      <p>You are not logged in</p>
+      <p>You are not logged in 11</p>
       <button type="submit">Sign in with GitHub</button>
     </form>
   )

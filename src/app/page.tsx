@@ -8,7 +8,7 @@ function SignIn() {
         await signIn('github')
       }}
     >
-      <p>You are not logged in 1111</p>
+      <p>You are not logged in </p>
       <div>{process.env.AUTH_GITHUB_ID}</div>
       <button type="submit">Sign in with GitHub</button>
     </form>

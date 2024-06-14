@@ -9,18 +9,18 @@ export default {
     })
   ],
   secret: process.env.AUTH_SECRET,
-  trustHost: true,
-  callbacks: {
-    authorized({ auth, request: { nextUrl } }) {
-      const isLoggedIn = !!auth?.user
-      const isOnDashboard = nextUrl.pathname.startsWith('/')
-      if (isOnDashboard) {
-        if (isLoggedIn) return true
-        return false // Redirect unauthenticated users to login page
-      } else if (isLoggedIn) {
-        return Response.redirect(new URL('/', nextUrl))
-      }
-      return true
-    }
-  }
+  trustHost: true
+  // callbacks: {
+  //   authorized({ auth, request: { nextUrl } }) {
+  //     const isLoggedIn = !!auth?.user
+  //     const isOnDashboard = nextUrl.pathname.startsWith('/')
+  //     if (isOnDashboard) {
+  //       if (isLoggedIn) return true
+  //       return false // Redirect unauthenticated users to login page
+  //     } else if (isLoggedIn) {
+  //       return Response.redirect(new URL('/', nextUrl))
+  //     }
+  //     return true
+  //   }
+  // }
 } satisfies NextAuthConfig

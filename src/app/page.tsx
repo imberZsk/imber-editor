@@ -10,6 +10,7 @@ function SignIn() {
     >
       <p>You are not logged in 1</p>
       <button type="submit">Sign in with GitHub</button>
+      <div>{process.env.AUTH_GITHUB_ID}</div>
     </form>
   )
 }

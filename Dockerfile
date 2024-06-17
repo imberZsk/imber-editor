@@ -7,7 +7,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
  
 # 安装依赖
-COPY package.json pnpm-lock.yaml* ./
+COPY package.json .npmrc pnpm-lock.yaml* ./
 RUN corepack enable pnpm && pnpm i --frozen-lockfile
  
 # 仅在需要时重新构建源代码

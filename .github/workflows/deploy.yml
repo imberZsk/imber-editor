@@ -29,7 +29,7 @@ jobs:
             if [ ! -f .env ]; then echo ".env file not found"; exit 1; fi ;
             echo "------ .env file found ------" ;
             cat .env ;  # 输出 .env 文件内容以调试
-            docker run -d --env-file .env -p 80:3000 editor ;
+            docker run -d -p 80:3000 editor ;
             echo "------ docker run done ------" ;
           '
       - name: success

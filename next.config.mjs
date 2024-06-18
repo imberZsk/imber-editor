@@ -7,8 +7,7 @@ const nextConfig = {
         destination: `https://myplus-api.meizu.cn/:path*`
       }
     ]
-  },
-  output: 'standalone'
+  }
 }
 
 export default nextConfig

@@ -9,7 +9,7 @@ function SignIn() {
       }}
     >
       <p>You are not logged in</p>
-      <p>环境变量3：{process.env.AUTH_GITHUB_ID}</p>
+      <p>环境变量4：{process.env.AUTH_GITHUB_ID}</p>
       <button type="submit">Sign in with GitHub</button>
     </form>
   )

@@ -8,13 +8,9 @@ function SignIn() {
         await signIn('github')
       }}
     >
-      <p>You are not logged in 试试官网的dockerfile 4</p>
+      <p>You are not logged in</p>
+      <p>环境变量：{process.env.AUTH_GITHUB_ID}</p>
       <button type="submit">Sign in with GitHub</button>
-      <div>{process.env.AUTH_URL}</div>
-      <div>{process.env.AUTH_GITHUB_ID}</div>
-      <div>{process.env.AUTH_GITHUB_SECRET}</div>
-      <div>{process.env.AUTH_SECRET}</div>
-      <div>{process.env.NEXTAUTH_URL}</div>
     </form>
   )
 }

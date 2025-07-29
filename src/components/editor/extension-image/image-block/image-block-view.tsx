@@ -1,28 +1,16 @@
 import { cn } from '@/lib/utils'
-import { Node } from '@tiptap/pm/model'
-import { Editor, NodeViewWrapper } from '@tiptap/react'
+import { ReactNodeViewProps, NodeViewWrapper } from '@tiptap/react'
 import { useCallback } from 'react'
 
-interface ImageBlockViewProps {
-  editor: Editor
-  getPos: () => number
-  node: Node & {
-    attrs: {
-      src: string
-    }
-  }
-  updateAttributes: (attrs: Record<string, string>) => void
-}
-
-export const ImageBlockView = (props: ImageBlockViewProps) => {
+export const ImageBlockView = (props: ReactNodeViewProps) => {
   const { editor, getPos, node } = props
-  const { src } = node.attrs
+  const { src, width, align } = node.attrs
 
   // 对齐方式
   const wrapperClassName = cn(
-    node.attrs.align === 'left' ? 'ml-0' : 'ml-auto',
-    node.attrs.align === 'right' ? 'mr-0' : 'mr-auto',
-    node.attrs.align === 'center' && 'mx-auto'
+    align === 'left' ? 'ml-0' : 'ml-auto',
+    align === 'right' ? 'mr-0' : 'mr-auto',
+    align === 'center' && 'mx-auto'
   )
 
   const onClick = useCallback(() => {
@@ -31,7 +19,7 @@ export const ImageBlockView = (props: ImageBlockViewProps) => {
 
   return (
     <NodeViewWrapper>
-      <div className={wrapperClassName} style={{ width: node.attrs.width }}>
+      <div className={wrapperClassName} style={{ width }}>
         {/* eslint-disable-next-line  */}
         <img className="block" src={src} alt="" onClick={onClick} />
       </div>

@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
     "db:push": "prisma db push",
-    "preinstall": "node ./src/lib/preinstall.js"
+    "preinstall": "node ./src/lib/preinstall.js",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.0",

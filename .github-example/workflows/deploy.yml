@@ -1,0 +1,36 @@
+name: deploy main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build & Deploy
+        env:
+          HOSTNAME: ${{ secrets.MY_IP }}
+          USER_NAME: ${{ secrets.MY_USER }}
+          PRIVATE_KEY: ${{ secrets.MY_RSA }}
+
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+            cd /editor ;
+            echo "------ cd done ------" ;
+            git pull ;
+            echo "------ git pull done ------" ;
+            docker rm $(docker stop $(docker ps -a -q --filter ancestor=editor)) || echo "No containers to remove" ;
+            echo "------ docker rm done ------" ;
+            docker build -t editor . ;
+            echo "------ docker build done ------" ;
+            if [ ! -f .env ]; then echo ".env file not found"; exit 1; fi ;
+            echo "------ .env file found ------" ;
+            cat .env ;  # 输出 .env 文件内容以调试
+            docker run -d -p 80:3000 editor ;
+            echo "------ docker run done ------" ;
+          '
+      - name: success
+        run: echo "deploy success"

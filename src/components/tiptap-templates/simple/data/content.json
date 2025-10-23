@@ -224,7 +224,7 @@
     {
       "type": "image",
       "attrs": {
-        "src": "/images/tiptap-ui-placeholder-image.jpg",
+        "src": "/editor/prosemirror-devtools.png",
         "alt": "placeholder-image",
         "title": "placeholder-image"
       }

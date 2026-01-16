@@ -1,0 +1,11 @@
+@import "./prosemirror.css";
+@import "./basic.css";
+@import "./tasklist.css";
+@import "./highlight.css";
+@import "./details.css";
+@import "./table.css";
+@import "./codeblock.css";
+@import "./placeholder.css";
+@import "./mention.css";
+@import "./columns.css";
+@import "./imageblock.css";

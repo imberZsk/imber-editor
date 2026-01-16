@@ -1,0 +1,58 @@
+:root,
+.light,
+.light-theme {
+  --slate-1: #fcfcfd;
+  --slate-2: #f9f9fb;
+  --slate-3: #f0f0f3;
+  --slate-4: #e8e8ec;
+  --slate-5: #e0e1e6;
+  --slate-6: #d9d9e0;
+  --slate-7: #cdced6;
+  --slate-8: #b9bbc6;
+  --slate-9: #8b8d98;
+  --slate-10: #80838d;
+  --slate-11: #60646c;
+  --slate-12: #1c2024;
+
+  --h-slate-1: 240 20% 99%;
+  --h-slate-2: 240 20% 98%;
+  --h-slate-3: 240 11% 95%;
+  --h-slate-4: 240 10% 92%;
+  --h-slate-5: 230 11% 89%;
+  --h-slate-6: 240 10% 86%;
+  --h-slate-7: 233 10% 82%;
+  --h-slate-8: 231 10% 75%;
+  --h-slate-9: 231 6% 57%;
+  --h-slate-10: 226 5% 53%;
+  --h-slate-11: 220 6% 40%;
+  --h-slate-12: 210 13% 13%;
+}
+
+.dark,
+.dark-theme {
+  --slate-1: #111113;
+  --slate-2: #18191b;
+  --slate-3: #212225;
+  --slate-4: #272a2d;
+  --slate-5: #2e3135;
+  --slate-6: #363a3f;
+  --slate-7: #43484e;
+  --slate-8: #5a6169;
+  --slate-9: #696e77;
+  --slate-10: #777b84;
+  --slate-11: #b0b4ba;
+  --slate-12: #edeef0;
+
+  --h-slate-1: 240 6% 7%;
+  --h-slate-2: 220 6% 10%;
+  --h-slate-3: 225 6% 14%;
+  --h-slate-4: 210 7% 16%;
+  --h-slate-5: 214 7% 19%;
+  --h-slate-6: 213 8% 23%;
+  --h-slate-7: 213 8% 28%;
+  --h-slate-8: 212 8% 38%;
+  --h-slate-9: 219 6% 44%;
+  --h-slate-10: 222 5% 49%;
+  --h-slate-11: 216 7% 71%;
+  --h-slate-12: 220 9% 94%;
+}

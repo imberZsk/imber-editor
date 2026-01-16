@@ -1,0 +1,99 @@
+/* 导入色板 */
+@import "./blue.css";
+@import "./slate.css";
+
+/****** 背景色 ******/
+:root,
+.light,
+.light-theme {
+  --bg: hsl(0 0% 100%);
+  --h-bg: 0 0% 100%;
+}
+
+.dark,
+.dark-theme {
+  --bg: hsl(213 26% 7%);
+  --h-bg: 213 26% 7%;
+}
+
+/****** 主色调 ******/
+:root {
+  /* 主色 primary */
+  --primary-1: var(--blue-1);
+  --primary-2: var(--blue-2);
+  --primary-3: var(--blue-3);
+  --primary-4: var(--blue-4);
+  --primary-5: var(--blue-5);
+  --primary-6: var(--blue-6);
+  --primary-7: var(--blue-7);
+  --primary-8: var(--blue-8);
+  --primary-9: var(--blue-9);
+  --primary-10: var(--blue-10);
+  --primary-11: var(--blue-11);
+  --primary-12: var(--blue-12);
+
+  /* 以主色作背景时 */
+  --primary-contrast: var(--blue-contrast);
+  --primary-surface: var(--blue-surface);
+  --primary-indicator: var(--blue-indicator);
+  --primary-track: var(--blue-track);
+
+  /* 灰色 gray */
+  --gray-1: var(--slate-1);
+  --gray-2: var(--slate-2);
+  --gray-3: var(--slate-3);
+  --gray-4: var(--slate-4);
+  --gray-5: var(--slate-5);
+  --gray-6: var(--slate-6);
+  --gray-7: var(--slate-7);
+  --gray-8: var(--slate-8);
+  --gray-9: var(--slate-9);
+  --gray-10: var(--slate-10);
+  --gray-11: var(--slate-11);
+  --gray-12: var(--slate-12);
+}
+
+/* 主色调使用说明
+
+  1-2 主应用背景
+  条纹表格背景、代码块背景、卡片背景、侧边栏背景、画布区域背景
+  --primary-base: var(--blue-1);
+  --primary-bg-subtle: var(--blue-2);
+
+  3-5 组件背景
+  正常状态、悬停状态、按下或选择状态
+  --primary-bg: var(--blue-3);
+  --primary-bg-hover: var(--blue-4);
+  --primary-bg-active: var(--blue-5);
+
+  6-8 边框
+  6 适用于不具备交互性的组件的细微边框。例如侧边栏、页眉、卡片、警告框和分隔线。
+  --primary-line: var(--blue-6);
+  7 适用于具备交互性的组件的细微边框。
+  --primary-border: var(--blue-7);
+  8 适用于具备交互性的组件的较强边框以及焦点环。
+  --primary-border-hover: var(--blue-8);
+
+  9-10 纯色背景
+  色彩饱和度最高，白色或黑色混合得最少。
+  9 网站/应用的背景、网站部分区域的背景、页眉背景、组件背景、图形/标志、覆盖层、彩色阴影、强调边框 
+  --primary-solid: var(--blue-9);
+  10 设计用于组件的悬停状态，其中 9 是组件的正常状态背景。
+  --primary-solid-hover: var(--blue-10);
+
+  11-12 文本
+  11 适用于低对比度文本。
+  --primary-text: var(--blue-11);
+  12 适用于高对比度文本。
+  --primary-text-contrast: var(--blue-12);
+
+  反差色，用 primary 作背景色时使用
+  --primary-contrast: #fff;
+  表面颜色，由某些variant="surface"组件使用
+  --primary-surface: #f5f8ffcc;
+  指示器颜色，由复选框、单选按钮和选项卡等组件使用
+  --primary-indicator: #3d63dd;
+  跟踪颜色，供滑块和进度条等组件使用
+  --primary-track: #3d63dd;
+
+*/

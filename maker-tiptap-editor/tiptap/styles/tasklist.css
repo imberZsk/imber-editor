@@ -1,0 +1,33 @@
+.chief-editor {
+  ul[data-type="taskList"] {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ul[data-type="taskList"] p {
+    margin: 0;
+  }
+
+  ul[data-type="taskList"] li {
+    display: flex;
+  }
+
+  ul[data-type="taskList"] li > label {
+    margin-top: 0.25rem;
+    margin-right: 0.5rem;
+    flex: 1 1 auto;
+    flex-shrink: 0;
+    flex-grow: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  ul[data-type="taskList"] li > div {
+    flex: 1 1 auto;
+  }
+
+  ul[data-type="taskList"] li[data-checked="true"] {
+    text-decoration-line: line-through;
+  }
+}

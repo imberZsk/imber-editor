@@ -1,0 +1,21 @@
+{
+  "name": "@tiptap-pro/templates",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "templates/*"
+  ],
+  "description": "Templates for an advanced block editor using Tiptap",
+  "scripts": {
+    "dev": "npm run dev --prefix ./templates/next-block-editor-app",
+    "dev:simple-editor": "npm run dev --prefix ./templates/react-simple-editor",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Tiptap GmbH",
+    "url": "https://tiptap.dev"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {}
+}

@@ -1,0 +1,78 @@
+:root,
+.light,
+.light-theme {
+  --blue-1: #fdfdfe;
+  --blue-2: #f7f9ff;
+  --blue-3: #edf2fe;
+  --blue-4: #dfeaff;
+  --blue-5: #d0dfff;
+  --blue-6: #bdd1ff;
+  --blue-7: #a6bff9;
+  --blue-8: #87a5ef;
+  --blue-9: #3d63dd;
+  --blue-10: #3657c3;
+  --blue-11: #395bc7;
+  --blue-12: #1d2e5c;
+
+  --blue-contrast: #fff;
+  --blue-surface: #cbcdd3;
+  --blue-indicator: #3d63dd;
+  --blue-track: #3d63dd;
+
+  --h-blue-1: 240 33% 99%;
+  --h-blue-2: 225 100% 98%;
+  --h-blue-3: 222 89% 96%;
+  --h-blue-4: 219 100% 94%;
+  --h-blue-5: 221 100% 91%;
+  --h-blue-6: 222 100% 87%;
+  --h-blue-7: 222 87% 81%;
+  --h-blue-8: 223 76% 73%;
+  --h-blue-9: 226 70% 55%;
+  --h-blue-10: 226 57% 49%;
+  --h-blue-11: 226 56% 50%;
+  --h-blue-12: 224 52% 24%;
+
+  --h-blue-contrast: 0 0% 100%;
+  --h-blue-surface: 225 8% 81%;
+  --h-blue-indicator: 226 70% 55%;
+  --h-blue-track: 226 70% 55%;
+}
+
+.dark,
+.dark-theme {
+  --blue-1: #0c101c;
+  --blue-2: #111725;
+  --blue-3: #172448;
+  --blue-4: #1d2e61;
+  --blue-5: #243974;
+  --blue-6: #2d4484;
+  --blue-7: #375098;
+  --blue-8: #405eb2;
+  --blue-9: #3d63dd;
+  --blue-10: #3f5cb0;
+  --blue-11: #93b4ff;
+  --blue-12: #d5e2ff;
+
+  --blue-contrast: #fff;
+  --blue-surface: #1a1e2a;
+  --blue-indicator: #3d63dd;
+  --blue-track: #3d63dd;
+
+  --h-blue-1: 225 40% 8%;
+  --h-blue-2: 222 37% 11%;
+  --h-blue-3: 224 52% 19%;
+  --h-blue-4: 225 54% 25%;
+  --h-blue-5: 224 53% 30%;
+  --h-blue-6: 224 49% 35%;
+  --h-blue-7: 225 47% 41%;
+  --h-blue-8: 224 47% 47%;
+  --h-blue-9: 226 70% 55%;
+  --h-blue-10: 225 47% 47%;
+  --h-blue-11: 222 100% 79%;
+  --h-blue-12: 221 100% 92%;
+
+  --h-blue-contrast: 0 0% 100%;
+  --h-blue-surface: 225 24% 13%;
+  --h-blue-indicator: 226 70% 55%;
+  --h-blue-track: 226 70% 55%;
+}

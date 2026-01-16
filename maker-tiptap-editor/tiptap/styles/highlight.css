@@ -1,0 +1,43 @@
+:root {
+  --hg-red: #ff5651;
+  --hg-orange: #ffa53d;
+  --hg-yellow: rgb(251, 222, 40);
+  --hg-green: #62d256;
+  --hg-blue: rgba(78, 131, 253, 0.55);
+  --hg-purple: rgba(147, 90, 246, 0.55);
+  --hg-pink: #fe8acd;
+  --hg-brown: #ca7327db;
+  --hg-grey: #b8bcc1;
+
+  --hg-red1: #ffafab;
+  --hg-orange1: rgba(254, 212, 164, 0.8);
+  --hg-yellow1: rgba(255, 246, 122, 0.8);
+  --hg-green1: rgba(183, 237, 177, 0.8);
+  --hg-blue1: rgba(186, 206, 253, 0.7);
+  --hg-purple1: rgba(205, 178, 250, 0.7);
+  --hg-pink1: #ffc1e5;
+  --hg-brown1: #f8aa66a1;
+  --hg-grey1: rgba(222, 224, 227, 0.834);
+}
+
+.dark {
+  --hg-red: #ff5651;
+  --hg-orange: #ffa53d;
+  --hg-yellow: rgba(251, 223, 40, 0.55);
+  --hg-green: #62d256;
+  --hg-blue: rgba(78, 131, 253, 0.55);
+  --hg-purple: rgba(147, 90, 246, 0.55);
+  --hg-pink: #fe8acd;
+  --hg-brown: #ca7327db;
+  --hg-grey: #b8bcc1;
+
+  --hg-red1: #ffafab;
+  --hg-orange1: rgba(254, 212, 164, 0.8);
+  --hg-yellow1: rgba(255, 246, 122, 0.8);
+  --hg-green1: rgba(183, 237, 177, 0.8);
+  --hg-blue1: rgba(186, 206, 253, 0.7);
+  --hg-purple1: rgba(205, 178, 250, 0.7);
+  --hg-pink1: #ffc1e5;
+  --hg-brown1: #f8aa66a1;
+  --hg-grey1: rgba(222, 224, 227, 0.834);
+}
